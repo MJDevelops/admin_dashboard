@@ -16,9 +16,10 @@ body {
 }
 
 .sidebar {
-    display: grid;
-    grid-template-rows: 25px 150px;
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 30px;
     justify-content: left;
     padding: 30px;
     color: white;
@@ -33,24 +34,79 @@ body {
 }
 
 .nav ul {
-    display: grid;
+    display: flex;
     gap: 5px;
-    grid-template-rows: repeat(5, 1fr);
+    flex-direction: column;
+}
+
+.heading p {
+    display: flex;
+    align-items: center;
+}
+
+.heading p img {
+    width: 50px;
+}
+
+.nav ul li {
+    display: flex;
+}
+
+.nav ul li button,
+.other-navs ul li button {
+    display: flex;
+    background-color: #2CC4E1;
+    align-items: center;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    gap: 10px;
+}
+
+.nav ul li button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav ul li img,
+.other-navs ul li img {
+    width: 20px;
+    height: auto;
 }
 
 .other-navs ul {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 5px;
 }
 
+.other-navs ul li {
+    display: flex;
+}
 
+
+
+.other-navs ul li button {
+    display: flex;
+    background-color:aquamarine;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2CC4E1;
+}
+
+.other-navs ul li button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
 
 .header {
     display: grid;
     padding: 20px;
     grid-template-rows: 1fr 1fr;
     grid-area: head;
+    box-shadow: 0px 3px rgba(0, 0, 0, 0.1);
 }
 
 .header .upper {
@@ -76,26 +132,35 @@ body {
 }
 
 .content-opts {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-.content-opts > button {
-    width: 75px;
+.content-opts button {
+    padding: 10px;
+    width: 100px;
+    border-radius: 15px;
+    background: #2CC4E1;
+    justify-content: space-between;
+    color: white;
+    border: none;
+}
+
+.content-opts button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 
 .profile-options {
-    display: grid;
-    grid-template-columns: repeat(3, 80px);
-    gap: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .main-content {
     display: grid;
+    background-color: rgba(238, 237, 237, 0.4);
     gap: 20px;
-    border: 1px solid red;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-area: main;
@@ -108,13 +173,20 @@ body {
 
 .projects-content {
     display: grid;
+    padding: 10px;
+    gap: 15px;
     grid-template-rows: auto;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, 1fr);
     grid-area: project;
 }
 
 .projects-content > div {
     font-size: 10px;
+    padding: 10px;
+    box-shadow: 0px 3px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    border-left: 5px solid rgb(255, 153, 0);
 }
 
 .projects-content > p {
@@ -123,22 +195,70 @@ body {
     align-self: start;
 }
 
-.announcements {
+.projects-content .project {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 0px;
+}
+
+.announcements {
+    display: flex;
+    flex-direction: column;
+    
+    padding-bottom: 0px;
     grid-area: announce;
     font-size: 10px;
-    grid-column: 2 / 3;
+    border-radius: 15px;
+    box-shadow: 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.announcements > div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    border-bottom: 1px solid grey;
+    flex: 1;
 }
 
 .announcements > p {
-    font-size: 10px;
-    align-self: start;
+    padding-bottom: 20px;
 }
-
-
 
 .trending {
     grid-area: trend;
     grid-column: 2 / 3;
+}
+
+.searchbar {
+    align-items: center;
+}
+
+.searchbar label img {
+    width: 20px;
+    justify-self: center;
+    height: auto;
+}
+
+#input-search {
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(243, 237, 237);
+    height: 25px;
+    width: 80%;
+}
+
+#input-search:focus {
+    outline: 2px solid #2CC4E1;
+}
+
+#input-search:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.trending {
+    display: flex;
+    flex-direction: column;
+}
+
+.trending > div {
+    background-color: white;
 }
